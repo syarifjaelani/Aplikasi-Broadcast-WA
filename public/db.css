@@ -1,0 +1,134 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@800&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Lato:400,500,600,700&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Noto+Sans:400,700&display=swap");
+
+* {
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+}
+body {
+  min-height: 100vh;
+  background-color: white;
+  padding: 40px;
+}
+.navbar {
+  background-color: #d9d9d9;
+  font-size: 1.2em;
+}
+.nav-item {
+  margin: 5px 8px;
+  border-radius: 5px;
+  transition: ease-out 0.15s;
+}
+
+.nav-item:hover {
+  transition: ease-in 0.15s;
+  color: white !important;
+  background-color: gray;
+}
+.nav-item a {
+  transition: ease-out 0.15s;
+  color: #000;
+}
+
+.nav-item:hover a {
+  color: white !important;
+}
+
+.navbar-brand {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 800;
+  color: rgb(7, 164, 153) !important;
+}
+
+.logout {
+  font-size: 0.8em;
+  padding: 3px 9px;
+}
+
+.welcome {
+  padding-top: 60px;
+}
+.welcome .message {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 800;
+  text-align: left;
+}
+.welcome .message h1 {
+  font-size: 1.8em;
+  font-weight: 800;
+}
+.main {
+  background-size: cover;
+  background-color: gray;
+  overflow: hidden;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.selection-menu {
+  margin-top: 30px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 30% 15% auto;
+  column-gap: 30px;
+}
+
+.selection-menu .btn {
+  justify-self: end;
+}
+
+.selection-menu label {
+  font-weight: 600;
+}
+.selection-menu-child {
+  width: 100%;
+  border: 1px solid #fff;
+  border-radius: 3px;
+  margin: 0;
+}
+.selection-option {
+  justify-self: self-start;
+  display: grid;
+  grid-template-columns: 35% auto auto;
+}
+.selection-option label {
+  display: grid;
+  justify-self: start;
+  align-self: center;
+}
+.selection-option select {
+  background-color: rgb(227, 227, 227);
+  border: none;
+}
+.table-data thead {
+  color: white;
+  background-color: rgb(7, 164, 153);
+}
+.table-data tbody {
+  color: black;
+  background-color: rgb(242, 242, 242);
+}
+.table-data tbody ul {
+  margin: 0;
+  padding: 0;
+}
+.btn-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 5px;
+}
+.btn-row a {
+  width: 100%;
+}
+.btn-row a button {
+  width: 100%;
+}
+.btn-row button {
+  width: 100%;
+}
+.selection-menu a {
+  justify-self: end;
+}

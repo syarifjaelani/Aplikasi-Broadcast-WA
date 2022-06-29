@@ -1,0 +1,24 @@
+{
+  "name": "aplikasi-broadcast-wa",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "nodemon test-db.js",
+    "devStart": "nodemon server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^3.1.8",
+    "express": "^4.18.1",
+    "open": "^8.4.0",
+    "qrcode": "^1.5.0",
+    "sqlite3": "^5.0.8",
+    "whatsapp-web.js": "^1.16.7"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.16"
+  }
+}

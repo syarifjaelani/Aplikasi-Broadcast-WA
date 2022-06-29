@@ -1,0 +1,368 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@800&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Lato:400,500,600,700&display=swap");
+
+* {
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+}
+body {
+  min-height: 100vh;
+  background-color: rgb(241, 241, 243);
+}
+.navbar {
+  background-color: white;
+  font-size: 1.2em;
+}
+.nav-item {
+  margin: 5px 8px;
+  border-radius: 5px;
+  transition: ease-out 0.15s;
+}
+
+.nav-item:hover {
+  transition: ease-in 0.15s;
+  color: white !important;
+  background-color: gray;
+}
+.nav-item a {
+  transition: ease-out 0.15s;
+  color: #000;
+}
+
+.nav-item:hover a {
+  color: white !important;
+}
+
+.navbar-brand {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 800;
+  color: rgb(7, 164, 153) !important;
+}
+
+.logout {
+  font-size: 0.8em;
+  padding: 3px 9px;
+}
+
+.welcome {
+  padding-top: 100px;
+}
+.welcome .message {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 800;
+  text-align: center;
+}
+.welcome .message h1 {
+  font-size: 1.8em;
+  margin-bottom: 1.5rem;
+}
+.main {
+  background-size: cover;
+  padding: 20px 50px 50px 50px;
+  color: white;
+  overflow: hidden;
+}
+
+.main {
+  width: 100vw;
+  height: auto;
+  display: grid;
+  grid-template-columns: 3fr 7fr;
+  column-gap: 30px;
+}
+
+.jenis-pesan-menu {
+  display: grid;
+  grid-template-rows: 70px 100px 250px 100px 50px;
+  justify-items: center;
+  align-items: center;
+  row-gap: 10px;
+}
+
+.ta-selection {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 3fr 4fr;
+  background-color: #fff;
+  color: #000;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  margin: 0;
+  justify-items: center;
+  border-radius: 5px;
+  box-shadow: 5px 5px 30px rgb(0 0 0 / 20%);
+  align-items: center;
+  column-gap: 10px;
+}
+.ta-selection label {
+  justify-self: end;
+}
+.ta-selection select {
+  width: 150px;
+  justify-self: start;
+}
+
+.jenis-pesan-menu button {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+
+.jenis-pesan-menu textarea {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 5px 8px;
+  resize: none;
+}
+
+.penerima-menu {
+  width: 100%;
+  background-color: rgb(7, 164, 153);
+  padding: 10px 20px;
+  border-radius: 5px;
+  display: grid;
+  grid-template-columns: 4fr 6fr;
+  column-gap: 20px;
+}
+
+.penerima-menu-1 {
+  width: 100%;
+}
+.penerima-menu-1 h2 {
+  font-size: 1.3em;
+  font-weight: 800;
+  margin-top: 5px;
+}
+.selection-menu {
+  width: 100%;
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  grid-template-rows: repeat(2, auto);
+  row-gap: 5px;
+}
+.selection-menu-child {
+  width: 100%;
+  border: 1px solid #fff;
+  border-radius: 3px;
+  margin: 0;
+}
+.selection-checkbox {
+  padding: 2px 5px;
+  align-self: center;
+}
+.selection-option {
+  display: grid;
+  grid-template-columns: 4fr 6fr;
+}
+.selection-option label {
+  display: grid;
+  justify-self: center;
+  align-self: center;
+}
+.selection-option select {
+  border: none;
+  padding-left: 10px;
+}
+.menu-konfirmasi-penerima h2 {
+  font-size: 1.3em;
+  font-weight: 800;
+  margin-top: 15px;
+}
+.menu-konfirmasi-penerima textarea {
+  width: 100%;
+}
+
+.penerima-menu-2 {
+  width: 100%;
+}
+.list-siswa h2 {
+  font-size: 1.3em;
+  font-weight: 800;
+  margin-top: 15px;
+}
+
+.wrapper {
+  display: inline-flex;
+  background: #fff;
+  height: 100px;
+  width: 400px;
+  align-items: center;
+  justify-content: space-evenly;
+  border-radius: 5px;
+  padding: 20px 15px;
+  box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.2);
+}
+.wrapper .option {
+  background: #fff;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  margin: 0 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  padding: 0 10px;
+  border: 2px solid lightgrey;
+  transition: all 0.3s ease;
+}
+.wrapper .option .dot {
+  height: 20px;
+  width: 20px;
+  background: #d9d9d9;
+  border-radius: 50%;
+  position: relative;
+}
+.wrapper .option .dot::before {
+  position: absolute;
+  content: "";
+  top: 4px;
+  left: 4px;
+  width: 12px;
+  height: 12px;
+  background: #0069d9;
+  border-radius: 50%;
+  opacity: 0;
+  transform: scale(1.5);
+  transition: all 0.3s ease;
+}
+input[type="radio"] {
+  display: none;
+}
+#option-1:checked:checked ~ .option-1,
+#option-2:checked:checked ~ .option-2 {
+  border-color: #0069d9;
+  background: #0069d9;
+}
+#option-1:checked:checked ~ .option-1 .dot,
+#option-2:checked:checked ~ .option-2 .dot {
+  background: #fff;
+}
+#option-1:checked:checked ~ .option-1 .dot::before,
+#option-2:checked:checked ~ .option-2 .dot::before {
+  opacity: 1;
+  transform: scale(1);
+}
+.wrapper .option span {
+  font-size: 20px;
+  color: #808080;
+}
+#option-1:checked:checked ~ .option-1 span,
+#option-2:checked:checked ~ .option-2 span {
+  color: #fff;
+}
+
+.notif {
+  left: 50px !important;
+  right: 50px;
+  width: 1225px;
+}
+.notif a {
+  left: 100px;
+}
+
+.notif2 {
+  left: 50px;
+  right: 50px;
+  width: 1225px;
+  position: relative;
+  padding: 1rem 1rem;
+
+  border: 2px solid transparent;
+  border-radius: 0.25rem;
+  border-color: #ffecb5;
+}
+
+.alert-danger {
+  margin-top: 1rem;
+}
+
+select:disabled {
+  background: #ebebeb;
+}
+textarea:read-only {
+  background: #ebebeb;
+}
+textarea {
+  padding: 3px 8px;
+}
+
+/*
+OPTION STYLE, FROM WEB
+*/
+.inputGroup {
+  background-color: #fff;
+  margin: 10px 0;
+  width: 100%;
+}
+.inputGroup label {
+  padding: 12px 30px;
+  width: 100%;
+  display: block;
+  text-align: left;
+  color: #3c454c;
+  cursor: pointer;
+  position: relative;
+  z-index: 2;
+  transition: color 200ms ease-in;
+  overflow: hidden;
+}
+.inputGroup label:before {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  content: "";
+  background-color: #e03dc8;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) scale3d(1, 1, 1);
+  transition: all 300ms cubic-bezier(0.4, 0, 0.2, 1);
+  opacity: 0;
+  z-index: -1;
+}
+.inputGroup label:after {
+  width: 32px;
+  height: 32px;
+  content: "";
+  border: 2px solid #d1d7dc;
+  background-color: #fff;
+  background-image: url("data:image/svg+xml,%3Csvg width='32' height='32' viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5.414 11L4 12.414l5.414 5.414L20.828 6.414 19.414 5l-10 10z' fill='%23fff' fill-rule='nonzero'/%3E%3C/svg%3E ");
+  background-repeat: no-repeat;
+  background-position: 2px 3px;
+  border-radius: 50%;
+  z-index: 2;
+  position: absolute;
+  right: 30px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  transition: all 200ms ease-in;
+}
+.inputGroup input:checked ~ label {
+  color: #fff;
+}
+.inputGroup input:checked ~ label:before {
+  transform: translate(-50%, -50%) scale3d(56, 56, 1);
+  opacity: 1;
+}
+.inputGroup input:checked ~ label:after {
+  background-color: #e0ba10;
+  border-color: #e0ba10;
+}
+.inputGroup input {
+  width: 32px;
+  height: 32px;
+  order: 1;
+  z-index: 2;
+  position: absolute;
+  right: 30px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  visibility: hidden;
+}
