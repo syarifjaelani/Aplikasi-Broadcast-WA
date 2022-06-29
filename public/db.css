@@ -132,3 +132,6 @@ body {
 .selection-menu a {
   justify-self: end;
 }
+.data-row:hover {
+  background-color: rgb(252, 252, 252);
+}

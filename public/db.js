@@ -16,6 +16,7 @@ const createOption = (data) => {
 
 const createSiswaRow = (data, i) => {
   const root = document.createElement("tr");
+  root.className = "data-row";
 
   const rowId = document.createElement("th");
   rowId.scope = "row";

@@ -54,7 +54,7 @@
     <!--Message-->
     <div class="welcome">
       <div class="message">
-        <h1>Database Nomor WA Siswa Pesantren Hidayatullah Medan</h1>
+        <h1>Database Nomor WA Siswa</h1>
       </div>
     </div>
     <!--Message End-->
@@ -121,7 +121,7 @@
         </thead>
         <tbody id="siswa-table-body">
           <% siswaData.forEach((siswa, i) => { %>
-          <tr>
+          <tr class="data-row">
             <th scope="row"><%= i + 1 %></th>
             <td><%= siswa.name %></td>
             <td><%= siswa.ortu1_name %></td>
