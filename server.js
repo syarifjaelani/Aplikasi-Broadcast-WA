@@ -16,7 +16,34 @@ const db = new sqlite3.Database(
   }
 );
 
-// DB FUNCCTION
+// DB FUNCTION
+let SPP_TEXT =
+  "Kepada orang tua siswa/siswi yang menerima pesan ini diingatkan untuk *segera melunasi pembayaran SPP siswa/siswi bulan ini*. Terima Kasih " +
+  "\r\n" +
+  "\r\n" +
+  "*Pesan ini dikirimkan secara otomatis* " +
+  "\r\n" +
+  "_Pondok Pesantren Hidayatullah, Medan_";
+
+const startCheck = async (db) => {
+  sql = `SELECT EXISTS(SELECT 1 FROM settings WHERE key=? LIMIT 1);`;
+  db.get(sql, ["spp_text"], (err, result) => {
+    if (err) console.log(err);
+    Object.entries(result).forEach(([key, value]) => {
+      if (value == 0) {
+        sql = `INSERT INTO settings (key, value) VALUES (?, ?)`;
+        db.run(sql, ["spp_text", SPP_TEXT], (err) => {
+          if (err) console.log(err);
+          console.log("SPP TEXT SET TO DEFAULT")
+        });
+      }
+    });
+  }
+  );
+}
+
+startCheck(db);
+
 const updateSettings = async (db, key, value) => {
   return new Promise((resolve, reject) => {
     sql = `UPDATE settings SET value=? WHERE key=?`;
@@ -649,7 +676,40 @@ apiRouter.post("/kelas/save", async (req, res) => {
   }
 });
 
-app.use("/api", apiRouter);
+// Get spp text from database
+apiRouter.get("/spp", async (req, res) => {
+  try {
+    const spp_text = await getSettingByKey(db, "spp_text");
+    res.json({
+      status: "success",
+      result: spp_text,
+    });
+  } catch (error) {
+    res.status(400).json({
+      status: "error",
+      message: error.message,
+    });
+  }
+})
+
+// Save spp text to database
+apiRouter.post("/spp/save", async (req, res) => {
+  try {
+    const spp_text = req.body.spp_text;
+    const isSuccess = await updateSettings(db, "spp_text", spp_text);
+    res.json({
+      status: "success",
+      result: isSuccess,
+    });
+  } catch (error) {
+    res.status(400).json({
+      status: "error",
+      message: error.message,
+    });
+  }
+}),
+
+  app.use("/api", apiRouter);
 
 // WHATSAPP LOGIN HANDLER
 const {

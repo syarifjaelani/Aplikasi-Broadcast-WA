@@ -210,26 +210,60 @@ taSelect.addEventListener("change", async () => {
 // KELAS SELECCT HANDLER
 classSelect.addEventListener("change", loadSiswa);
 
-// Radio Button Handler
-const SPP_TEXT =
+// SPP TEXT FUNCTION
+let SPP_TEXT =
   "Kepada orang tua siswa/siswi yang menerima pesan ini diingatkan untuk *segera melunasi pembayaran SPP siswa/siswi bulan ini*. Terima Kasih " +
   "\r\n" +
   "\r\n" +
   "*Pesan ini dikirimkan secara otomatis* " +
   "\r\n" +
   "_Pondok Pesantren Hidayatullah, Medan_";
+
+const getSppText = async () => {
+  const url = baseUrl + "/api/spp";
+  const response = await fetch(url);
+  const json = await response.json();
+  const sppText = json.result;
+  return sppText;
+}
+
+const updateSppText = async (spp_text) => {
+  const url = baseUrl + "/api/spp/save";
+  const response = await fetch(url, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      spp_text: spp_text,
+    }),
+  });
+  const json = await response.json();
+}
+
+
+
+
+
+
 let oldMessage = "";
 
-const radioSppClicked = () => {
+const radioSppClicked = async () => {
   oldMessage = customMessageInput.value;
+  SPP_TEXT = await getSppText();
+  customMessageInput.placeholder = "Masukkan Pesan SPP Anda..."
   customMessageInput.value = SPP_TEXT;
   customMessageInput.innerHTML = SPP_TEXT;
-  customMessageInput.readOnly = true;
+  customMessageInput.addEventListener("change", async () => {
+    updateSppText(customMessageInput.value);
+  });
 };
+
 const radioCustClicked = () => {
-  customMessageInput.readOnly = false;
   customMessageInput.value = oldMessage;
+  customMessageInput.placeholder = "Masukkan Pesan Custom Anda..."
   customMessageInput.innerHTML = oldMessage;
+  customMessageInput.addEventListener("change", () => { });
 };
 
 let rad = document.message_form.message_type;
